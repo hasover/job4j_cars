@@ -1,6 +1,7 @@
 package ru.job4j.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Objects;
 
 @Entity
@@ -10,7 +11,7 @@ public class Ad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String description;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "carbrand_id")
     private CarBrand carBrand;
     @ManyToOne(cascade = CascadeType.ALL)
@@ -22,6 +23,8 @@ public class Ad {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    @Temporal(value = TemporalType.TIMESTAMP)
+    private Date created = new Date(System.currentTimeMillis());
 
     public int getId() {
         return id;

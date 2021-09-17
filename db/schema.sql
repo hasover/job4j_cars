@@ -19,6 +19,7 @@ create table ads (
     carbody_id int references  car_bodies(id),
     photo varchar(100),
     is_sold boolean,
+    created timestamp,
     user_id int not null references users(id)
 );
 

@@ -14,17 +14,36 @@ public class Ad {
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "carbrand_id")
     private CarBrand carBrand;
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "carbody_id")
     private CarBody carBody;
     private String photo;
     @Column(name = "is_sold")
-    private boolean isSold;
-    @ManyToOne(cascade = CascadeType.ALL)
+    private boolean sold;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
     @Temporal(value = TemporalType.TIMESTAMP)
     private Date created = new Date(System.currentTimeMillis());
+
+    public Ad() {
+    }
+
+    public Ad(String description, CarBrand carBrand, CarBody carBody, String photo, User user) {
+        this.description = description;
+        this.carBrand = carBrand;
+        this.carBody = carBody;
+        this.photo = photo;
+        this.user = user;
+    }
+
+    public Date getCreated() {
+        return created;
+    }
+
+    public void setCreated(Date created) {
+        this.created = created;
+    }
 
     public int getId() {
         return id;
@@ -66,12 +85,12 @@ public class Ad {
         this.photo = photo;
     }
 
-    public boolean isSold() {
-        return isSold;
+    public boolean getSold() {
+        return sold;
     }
 
     public void setSold(boolean sold) {
-        isSold = sold;
+        this.sold = sold;
     }
 
     public User getUser() {
@@ -94,4 +113,5 @@ public class Ad {
     public int hashCode() {
         return Objects.hash(id);
     }
+
 }

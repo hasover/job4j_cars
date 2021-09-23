@@ -14,6 +14,9 @@
         <property name="format_sql">true</property>
         <property name="use_sql_comments">true</property>
         <property name="hibernate.dialect">org.hibernate.dialect.PostgresPlusDialect</property>
+        <property name="hibernate.connection.CharSet">utf8</property>
+        <property name="hibernate.connection.characterEncoding">utf8</property>
+        <property name="hibernate.connection.useUnicode">true</property>
         <property name="hibernate.hbm2ddl.auto">update</property>
         <mapping class="ru.job4j.model.CarBody"/>
         <mapping class="ru.job4j.model.CarBrand"/>

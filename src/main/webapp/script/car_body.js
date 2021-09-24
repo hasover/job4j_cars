@@ -2,7 +2,7 @@
 function loadCarBodies() {
     $.ajax({
         type: 'GET',
-        url: 'car_bodies',
+        url: 'car-bodies',
         dataType: 'json'
     }).done(function (data) {
         let selectElement = document.getElementById('selectBody')

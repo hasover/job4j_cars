@@ -2,7 +2,7 @@
 function loadCarBrands() {
     $.ajax({
         type: 'GET',
-        url: 'car_brands',
+        url: 'car-brands',
         dataType: 'json'
     }).done(function (data) {
         let selectElement = document.getElementById('selectBrand')

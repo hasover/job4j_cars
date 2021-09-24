@@ -24,7 +24,7 @@ public class RegServlet extends HttpServlet {
             req.getSession().setAttribute("user", user);
             resp.sendRedirect("./reg_success.html");
         } catch (Exception ex) {
-            resp.setStatus(403);
+            resp.setStatus(409);
             req.setAttribute("error", "Указанный логин существует");
             req.getRequestDispatcher("reg.jsp").forward(req, resp);
         }

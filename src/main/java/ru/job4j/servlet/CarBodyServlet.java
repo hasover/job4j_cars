@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/car_bodies")
+@WebServlet("/car-bodies")
 public class CarBodyServlet extends HttpServlet {
     private final static Gson GSON = new GsonBuilder().create();
     @Override

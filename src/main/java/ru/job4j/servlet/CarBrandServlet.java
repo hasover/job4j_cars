@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-@WebServlet("/car_brands")
+@WebServlet("/car-brands")
 public class CarBrandServlet extends HttpServlet {
     private final static Gson GSON = new GsonBuilder().create();
 
